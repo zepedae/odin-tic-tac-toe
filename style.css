@@ -1,0 +1,28 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.players{
+    display: flex;
+    justify-content: space-around;
+
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.gameboard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 14px;
+
+    background-color: black;
+}
+
+.tile{
+    height: 100px;
+    scrollbar-width: 100px;
+    background-color: white;
+}
