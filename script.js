@@ -1,32 +1,20 @@
 const player = (value, symbol) => {
   this.value = value;
   this.symbol = symbol;
-  let indices = [];
+  const indices = [];
 
-  return {value, symbol, indices};
-}
+  return { value, symbol, indices };
+};
 
-function addMove(tile) {
-  tile.innerText = turn.symbol;
-  gameboard[tile.value] = turn.value;
-  turn.indices.push
-  window();
-}
+const form = document.querySelector('#player-info');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-function win() {
-  if(Object.keys(player1.indices))
-  
-[1, 2, 3],
-[4, 5, 6],
-[7, 8, 9],
-[1, 4, 7],
-[2, 5, 8],
-[3, 6, 9],
-[1, 5, 9],
-[3, 5, 7],
-}
-
-
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  document.querySelector('.info').setAttribute('hidden', true);
+  console.log(data);
+});
 
 const tiles = document.querySelectorAll('.tile');
 
