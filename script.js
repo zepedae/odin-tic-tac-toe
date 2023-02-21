@@ -5,6 +5,7 @@ form.addEventListener('submit', (event) => {
 
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
+  console.log(data);
   document.querySelector('.info').hidden = true;
   startGame(data);
 });
@@ -51,7 +52,6 @@ const playMove = (tile, data) => {
 };
 
 const checkWin = (data) => {
-  console.log(data.board);
   if (data.board[0] === data.currentPlayer
     && data.board[1] === data.currentPlayer
     && data.board[2] === data.currentPlayer
@@ -86,12 +86,11 @@ const checkWin = (data) => {
 const alertWin = (data) => {
   document.querySelector('.gameboard').hidden = true;
   let winner;
-  if (data.currentPlayer == data.player1) {
-    winner = 'Player 1';
+  if (data.currentPlayer === data.player1) {
+    winner = data.player1Name;
   } else {
-    winner = 'Player 2';
+    winner = data.player2Name;
   }
-
   alert(`Congrats ${winner} wins`);
   resetGame();
 };
@@ -103,5 +102,4 @@ const switchTurn = (data) => {
 
 const resetGame = () => {
   location.reload();
-  // document.querySelector('.info').hidden = false;
 };
